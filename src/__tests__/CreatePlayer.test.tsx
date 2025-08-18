@@ -18,7 +18,7 @@ describe('button tests', () => {
         render(<CreatePlayer setPlayer={() => { }} />)
 
         const startBtn: HTMLElement = screen.getByRole('button', { name: /start game/i });
-        const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);
+        const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);  
         fireEvent.change(input, { target: { value: inputTextMock } })
 
         expect(input.value).toBe(inputTextMock);
