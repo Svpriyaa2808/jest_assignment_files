@@ -2,8 +2,7 @@ import { screen, render, fireEvent, getByLabelText } from '@testing-library/reac
 import userEvent, { UserEvent } from '@testing-library/user-event';
 import CreatePlayer from '.';
 
-
-// describe('button tests', () => {
+describe('button tests', () => {
 
     test('should render a Start button', () => {
         render(<CreatePlayer  />)
@@ -13,70 +12,70 @@ import CreatePlayer from '.';
         expect(startBtn).toBeInTheDocument();
     })
 
-    // test('should render a disabled Start button if input is less than 3', () => {
-    //     const inputTextMock: string = 'p'.repeat(2);
-    //     render(<CreatePlayer setPlayer={() => { }} />)
+    test('should render a disabled Start button if input is less than 3', () => {
+        const inputTextMock: string = 'p'.repeat(2);
+        render(<CreatePlayer  />)
 
-    //     const startBtn: HTMLElement = screen.getByRole('button', { name: /start game/i });
-    //     const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);  
-    //     fireEvent.change(input, { target: { value: inputTextMock } })
+        const startBtn: HTMLElement = screen.getByRole('button', { name: /start game/i });
+        const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);  
+        fireEvent.change(input, { target: { value: inputTextMock } })
 
-    //     expect(input.value).toBe(inputTextMock);
-    //     expect(startBtn).toBeDisabled();
-    // })
+        expect(input.value).toBe(inputTextMock);
+        expect(startBtn).toBeDisabled();
+    })
 
-//     test('should render a enabled Start button if input is more than 2', () => {
-//         const inputTextMock: string = 'p'.repeat(3);
-//         render(<CreatePlayer setPlayer={() => { }} />)
+    test('should render a enabled Start button if input is more than 2', () => {
+        const inputTextMock: string = 'p'.repeat(3);
+        render(<CreatePlayer  />)
 
-//         const startBtn: HTMLElement = screen.getByRole('button', { name: /start game/i });
-//         const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);
-//         fireEvent.change(input, { target: { value: inputTextMock } })
+        const startBtn: HTMLElement = screen.getByRole('button', { name: /start game/i });
+        const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);
+        fireEvent.change(input, { target: { value: inputTextMock } })
 
-//         expect(input.value).toBe(inputTextMock);
-//         expect(startBtn).not.toBeDisabled();
-//     })
+        expect(input.value).toBe(inputTextMock);
+        expect(startBtn).not.toBeDisabled();
+    })
 
 //  })
 
 // describe('input tests', () => {
 
-//     test('should render a input component with empty default value', () => {
-//         render(<CreatePlayer setPlayer={() => { }} />)
+    test('should render a input component with empty default value', () => {
+        render(<CreatePlayer  />)
 
-//         const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);
+        const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);
 
-//         expect(input).toBeInTheDocument();
-//         expect(input.value).toBe('');
-//     })
+        expect(input).toBeInTheDocument();
+        expect(input.value).toBe('');
+    })
 
-//     test('should only take 15 characters in inputfield', async () => {
-//         const inputTextMock: string = '1'.repeat(20);
-//         const user: UserEvent = userEvent.setup();
-//         render(<CreatePlayer setPlayer={() => { }} />)
+    test('should only take 15 characters in inputfield', async () => {
+        const inputTextMock: string = '1'.repeat(20);
+        const user: UserEvent = userEvent.setup();
+        render(<CreatePlayer />)
 
-//         let input: HTMLInputElement = screen.getByLabelText(/pick a name/i);
-//         await user.type(input, inputTextMock);
+        let input: HTMLInputElement = screen.getByLabelText(/pick a name/i);
+        await user.type(input, inputTextMock);
 
-//         expect(input.value.length).toBe(15);
-//     })
+        expect(input.value.length).toBe(15);
+    })
 
-// })
+})
 
-// describe('label tests', () => {
+describe('label tests', () => {
 
-//     test('should render a label component with text: Pick a name', () => {
-//         const labeltext: string = 'Pick a name';
-//         render(<CreatePlayer setPlayer={() => { }} />);
+    test('should render a label component with text: Pick a name', () => {
+        const labeltext: string = 'Pick a name';
+        render(<CreatePlayer setPlayer={() => { }} />);
 
-//         const text: HTMLElement = screen.getByText(labeltext);
+        const text: HTMLElement = screen.getByText(labeltext);
 
-//         expect(screen.getByLabelText(labeltext)).toBeInTheDocument();
-//         expect(text).toBe(text);
-//         expect(text).toBeInTheDocument();
-//     })
+        expect(screen.getByLabelText(labeltext)).toBeInTheDocument();
+        expect(text).toBe(text);
+        expect(text).toBeInTheDocument();
+    })
 
-// })
+})
 
 
 
