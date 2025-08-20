@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ProgressBar from '.';
-import { IQuizSet } from '@/interfaces/interfaces';
+import { IQuizSet } from '../../../../src/interfaces/interfaces';
 
 
 describe('progress bar tests', () => {
