@@ -35,39 +35,39 @@ test('should render a text with question-data', () => {
 
     });
 
-//     test("should render button-text according to button-alternative", () => {
+    test("should render button-text according to button-alternative", () => {
 
-//         const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
-//         render(<QuizArea gameQuiz={mockGameSet} step={step} answer={false} onClick={(): void => { }} />);
+        const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
+        render(<QuizArea gameQuiz={mockGameSet} step={step} answer={false} onClick={(): void => { }} />);
 
-//         const altBtns: HTMLButtonElement[] = screen.queryAllByTestId('alternative-item');
+        const altBtns: HTMLButtonElement[] = screen.queryAllByTestId('alternative-item');
 
-//         expect(altBtns.length).toEqual(mockGameSet[step].alternatives.length);//same
-//         expect(altBtns.length).toBe(4); //same
-//         altBtns.forEach((item, index) => expect(within(item).getByRole('button').textContent).toBe(mockGameSet[step].alternatives[index]))
-//     })
+        expect(altBtns.length).toEqual(mockGameSet[step].alternatives.length);//same
+        expect(altBtns.length).toBe(4); //same
+        altBtns.forEach((item, index) => expect(within(item).getByRole('button').textContent).toBe(mockGameSet[step].alternatives[index]))
+    })
 
-//     test('buttons should be enabled as default', () => {
+    test('buttons should be enabled as default', () => {
 
-//         const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
-//         render(<QuizArea gameQuiz={mockGameSet} step={step} answer={false} onClick={(): void => { }} />);
+        const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
+        render(<QuizArea gameQuiz={mockGameSet} step={step} answer={false} onClick={(): void => { }} />);
 
-//         const altItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+        const altItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
 
-//         expect(altItems.length).toEqual(mockGameSet[step].alternatives.length);
-//         altItems.forEach((item) => expect(within(item).getByRole('button')).not.toBeDisabled())
-//     })
+        expect(altItems.length).toEqual(mockGameSet[step].alternatives.length);
+        altItems.forEach((item) => expect(within(item).getByRole('button')).not.toBeDisabled())
+    })
 
-//     test('buttons should be disabled if answered', () => {
+    test('buttons should be disabled if answered', () => {
  
-//         const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
-//         render(<QuizArea gameQuiz={mockGameSet} step={step} answer={true} onClick={(): void => { }} />);
+        const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
+        render(<QuizArea gameQuiz={mockGameSet} step={step} answer={true} onClick={(): void => { }} />);
 
-//         const altItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+        const altItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
 
-//         expect(altItems.length).toEqual(mockGameSet[step].alternatives.length);
-//         altItems.forEach((item) => expect(within(item).getByRole('button')).toBeDisabled())
-//     })
+        expect(altItems.length).toEqual(mockGameSet[step].alternatives.length);
+        altItems.forEach((item) => expect(within(item).getByRole('button')).toBeDisabled())
+    })
 
 //     test('should render default color on alternative-items', () => {
 
