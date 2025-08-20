@@ -9,7 +9,7 @@ import { useState } from "react"
 const GameBoard = ({player}:{player:string}) => {
     const[answered,setAnswered] = useState<boolean>(false)
     const[step,setStep]=useState<number>(0)
-
+    
 
     const handleStep = () => {
         setStep(step+1);

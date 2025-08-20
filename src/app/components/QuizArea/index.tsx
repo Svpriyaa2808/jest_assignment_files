@@ -11,9 +11,14 @@ type QuizAreaProps = {
 
 const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
     // const[btnDisabled,setBtnDisabled] = useState<boolean>(false)
-
-    const handleClick = () => {  
+    const[answerClass,setanswerClass] = useState<string>('idle')
+    const handleClick = (index:number) => {  
         onClick();    
+         return index === gameQuiz[step].answer ? setanswerClass("correct") : setanswerClass("wrong");
+    }
+
+    const handleAnsClass = (index: number) => {
+        return index === gameQuiz[step].answer ? "correct" : "wrong";
     }
 
     return (
@@ -21,8 +26,8 @@ const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
             <h3>{gameQuiz[step].question}</h3>
             <div>
                 {gameQuiz[step].alternatives.map((item,index)=>
-                <li key={index}  data-testid="alternative-item">
-                    <button disabled={answer} onClick={handleClick}
+                <li key={index}  data-testid="alternative-item"  className={`${answerClass}`}>
+                    <button disabled={answer} onClick={()=>handleClick(index)}
                         className="disabled:bg-amber-50 bg-amber-200">{item}</button></li>)}
             </div>
            

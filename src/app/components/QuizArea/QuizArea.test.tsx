@@ -69,28 +69,28 @@ test('should render a text with question-data', () => {
         altItems.forEach((item) => expect(within(item).getByRole('button')).toBeDisabled())
     })
 
-//     test('should render default color on alternative-items', () => {
+    test('should render default color on alternative-items', () => {
 
-//         const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
-//         render(<QuizArea gameQuiz={mockGameSet} step={step} answer={false} onClick={(): void => { }} />);
+        const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
+        render(<QuizArea gameQuiz={mockGameSet} step={step} answer={false} onClick={(): void => { }} />);
 
-//         const altItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+        const altItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
 
-//         expect(altItems[0]).toHaveClass('idle');
-//     })
+        expect(altItems[0]).toHaveClass('idle');
+    })
 
-//     test("should render 'wrong' color and 'correct' when got an answer on alternative-items", () => {
+    test("should render 'wrong' color and 'correct' when got an answer on alternative-items", () => {
  
-//         const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
-//         render(<QuizArea gameQuiz={mockGameSet} step={step} answer={true} onClick={(): void => { }} />);
+        const mockGameSet: IQuizSet[] = [mockData, mockData, mockData, mockData]
+        render(<QuizArea gameQuiz={mockGameSet} step={step} answer={true} onClick={(): void => { }} />);
 
-//         const altItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+        const altItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
 
-//         altItems.forEach(
-//             (item, index) => index === mockData.answer
-//                 ? expect(item).toHaveClass('correct')
-//                 : expect(item).toHaveClass('wrong')
-//         )
-//     })
+        altItems.forEach(
+            (item, index) => index === mockData.answer
+                ? expect(item).toHaveClass('correct')
+                : expect(item).toHaveClass('wrong')
+        )
+    })
 // })
 
