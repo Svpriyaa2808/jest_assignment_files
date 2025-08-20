@@ -6,20 +6,20 @@ import GameHeader from "./components/GameHeader";
 
 export default function Home() {
   const[playerName,setPlayerName] = useState<string>('')
-  const [gamestart,setGameStart] = useState<boolean>(false)
-  const [inputValue,setInputValue] = useState<string>('')
+  const [gameStart,setGameStart] = useState<boolean>(false)
+ 
 
-  const handleGame = () => {
+  const handleGame = (name:string) => {
     setGameStart(true) 
-
+    setPlayerName(name)
   }
   
   return (
     <>
-    {!gamestart && 
+    {!gameStart && 
     <CreatePlayer setPlayer={handleGame}/>}
-    {gamestart && 
-    <GameHeader player="tobias"/>
+    {gameStart && 
+    <GameHeader player={playerName}/>
 }
     </>
   );
