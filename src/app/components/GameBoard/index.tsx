@@ -26,10 +26,11 @@ const GameBoard = ({player}:{player:string}) => {
         <>
         <header>
         <GameHeader player={player}/>
-        <ProgressBar />
+       
         </header>
         {step < gameQuiz.length && 
         <>
+         <ProgressBar gameQuiz={gameQuiz} step={step}/>
         <QuizArea gameQuiz={gameQuiz} step={step} answer={answered} onClick={handleAnswer} />
         <NextBtn gameQuiz={gameQuiz} step={step} answer={answered} onClick={handleStep} />
             </>
