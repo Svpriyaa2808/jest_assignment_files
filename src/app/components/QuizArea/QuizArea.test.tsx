@@ -20,7 +20,7 @@ test('should render a text with question-data', () => {
     expect(questionEl.textContent).toBe(mockGameSet[step].question);
 });
 
-//describe('list buttons (alternatives)', () => {
+describe('list buttons (alternatives)', () => {
 
     test("should render amount 'alternatives'-buttons equal to alternative length", () => {
 
@@ -92,5 +92,5 @@ test('should render a text with question-data', () => {
                 : expect(item).toHaveClass('wrong')
         )
     })
-// })
+})
 

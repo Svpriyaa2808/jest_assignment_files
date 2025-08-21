@@ -5,7 +5,7 @@ const CreatePlayer = ({setPlayer}:{setPlayer:(name:string)=>void}) => {
     const [inputValue,setInputValue] = useState<string>('')
     
     return (
-        <div>
+        <div data-testid="createPlayer">
           <fieldset>
             <label htmlFor="user-input">Pick a name</label>
             <input value={inputValue} id="user-input" maxLength={15} onChange={(event)=>setInputValue(event.target.value)} placeholder="your name"/>

@@ -25,7 +25,7 @@ const GameBoard = ({player}:{player:string}) => {
 
     console.log(answered)
     return (
-        <>
+        <main>
         <header>
         <GameHeader player={player}/>
        
@@ -38,7 +38,7 @@ const GameBoard = ({player}:{player:string}) => {
             </>
         }
         {step === gameQuiz.length && <button>Play Again</button>}
-        </>
+        </main>
     )
 }
 

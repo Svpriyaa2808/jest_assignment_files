@@ -30,64 +30,64 @@ test("should render 'QuizArena' component ", () => {
     expect(listItems[0]).toBeVisible();
 })
 
-// test("should render disabled 'Alternatives' item when one of them is clicked", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should render disabled 'Alternatives' item when one of them is clicked", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     const listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     const altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    const listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    const altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
 
-//     listItems.forEach(item => expect(within(item).getByRole('button')).not.toBeDisabled());
-//     fireEvent.click(altBtn);
-//     listItems.forEach(item => expect(within(item).getByRole('button')).toBeDisabled());
-// })
+    listItems.forEach(item => expect(within(item).getByRole('button')).not.toBeDisabled());
+    fireEvent.click(altBtn);
+    listItems.forEach(item => expect(within(item).getByRole('button')).toBeDisabled());
+})
 
-// test("should render disabled 'Alternatives' item and show right result colors", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should render disabled 'Alternatives' item and show right result colors", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     const listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     const altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    const listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    const altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
 
-//     listItems.forEach(item => expect(within(item).getByRole('button')).not.toBeDisabled());
-//     fireEvent.click(altBtn);
-//     listItems.forEach(item => expect(within(item).getByRole('button')).toBeDisabled());
+    listItems.forEach(item => expect(within(item).getByRole('button')).not.toBeDisabled());
+    fireEvent.click(altBtn);
+    listItems.forEach(item => expect(within(item).getByRole('button')).toBeDisabled());
 
-//     listItems.forEach(
-//         (item, index) => index === gameQuiz[0].answer
-//             ? expect(item).toHaveClass('correct')
-//             : expect(item).toHaveClass('wrong')
-//     )
-// })
+    listItems.forEach(
+        (item, index) => index === gameQuiz[0].answer
+            ? expect(item).toHaveClass('correct')
+            : expect(item).toHaveClass('wrong')
+    )
+})
 
-// test("should render a button with 'Next' and be enabled when clicking on a 'Alternative' button", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should render a button with 'Next' and be enabled when clicking on a 'Alternative' button", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     const listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     const altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
-//     const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
+    const listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    const altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
 
-//     expect(nextBtn).toBeDisabled();
-//     fireEvent.click(altBtn);
-//     expect(nextBtn).not.toBeDisabled();
-// })
+    expect(nextBtn).toBeDisabled();
+    fireEvent.click(altBtn);
+    expect(nextBtn).not.toBeDisabled();
+})
 
-// test("should render a button with 'See Result' if on last question, button should be disabled", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should render a button with 'See Result' if on last question, button should be disabled", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
-//     const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
+    let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
 
-//     Array.from({ length: gameQuiz.length - 1 }).forEach(() => {
-//         listItems = screen.queryAllByTestId('alternative-item');
-//         altBtn = within(listItems[0]).getByRole('button');
-//         fireEvent.click(altBtn);
-//         fireEvent.click(nextBtn);
-//     })
+    Array.from({ length: gameQuiz.length - 1 }).forEach(() => {
+        listItems = screen.queryAllByTestId('alternative-item');
+        altBtn = within(listItems[0]).getByRole('button');
+        fireEvent.click(altBtn);
+        fireEvent.click(nextBtn);
+    })
 
-//     expect(nextBtn.textContent).toBe('See result');
-//     expect(nextBtn).toBeDisabled();
+    expect(nextBtn.textContent).toBe('See result');
+    expect(nextBtn).toBeDisabled();
 
-// })
+})
 
 // test("should hide 'progress/quiz/nextbtn' when clicking 'See Result' and render Result'", () => {
 //     render(<GameBoard player={'test user'} />)
