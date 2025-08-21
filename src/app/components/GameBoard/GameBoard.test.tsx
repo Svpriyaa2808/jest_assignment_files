@@ -89,150 +89,150 @@ test("should render a button with 'See Result' if on last question, button shoul
 
 })
 
-// test("should hide 'progress/quiz/nextbtn' when clicking 'See Result' and render Result'", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should hide 'progress/quiz/nextbtn' when clicking 'See Result' and render Result'", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
-//     const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
-//     const progressEl: HTMLProgressElement = screen.queryByRole('progressbar') as HTMLProgressElement;
+    let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
+    const progressEl: HTMLProgressElement = screen.queryByRole('progressbar') as HTMLProgressElement;
 
-//     Array.from({ length: gameQuiz.length }).forEach(() => {
-//         listItems = screen.queryAllByTestId('alternative-item');
-//         altBtn = within(listItems[0]).getByRole('button');
-//         fireEvent.click(altBtn);
-//         fireEvent.click(nextBtn);
-//     })
+    Array.from({ length: gameQuiz.length }).forEach(() => {
+        listItems = screen.queryAllByTestId('alternative-item');
+        altBtn = within(listItems[0]).getByRole('button');
+        fireEvent.click(altBtn);
+        fireEvent.click(nextBtn);
+    })
 
-//     expect(nextBtn.textContent).toBe('See result');
+    expect(nextBtn.textContent).toBe('See result');
 
-//     fireEvent.click(nextBtn);
+    fireEvent.click(nextBtn);
 
-//     expect(nextBtn).not.toBeInTheDocument();
-//     expect(progressEl).not.toBeInTheDocument();
-//     expect(listItems[0]).not.toBeInTheDocument();
+    expect(nextBtn).not.toBeInTheDocument();
+    expect(progressEl).not.toBeInTheDocument();
+    expect(listItems[0]).not.toBeInTheDocument();
 
-//     const resultEl = screen.queryByTestId('result') as HTMLElement;
-//     expect(resultEl).toBeInTheDocument();
-//     expect(resultEl).toBeVisible();
+    const resultEl = screen.queryByTestId('result') as HTMLElement;
+    expect(resultEl).toBeInTheDocument();
+    expect(resultEl).toBeVisible();
 
-// })
+})
 
-// test("should render correct values in result after a full-game.", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should render correct values in result after a full-game.", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
-//     const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
-//     const progressEl: HTMLProgressElement = screen.queryByRole('progressbar') as HTMLProgressElement;
+    let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
+    const progressEl: HTMLProgressElement = screen.queryByRole('progressbar') as HTMLProgressElement;
 
-//     Array.from({ length: gameQuiz.length }).forEach(() => {
-//         listItems = screen.queryAllByTestId('alternative-item');
-//         altBtn = within(listItems[0]).getByRole('button');
-//         fireEvent.click(altBtn);
-//         fireEvent.click(nextBtn);
-//     })
+    Array.from({ length: gameQuiz.length }).forEach(() => {
+        listItems = screen.queryAllByTestId('alternative-item');
+        altBtn = within(listItems[0]).getByRole('button');
+        fireEvent.click(altBtn);
+        fireEvent.click(nextBtn);
+    })
 
-//     expect(nextBtn.textContent).toBe('See result');
+    expect(nextBtn.textContent).toBe('See result');
 
-//     fireEvent.click(nextBtn);
+    fireEvent.click(nextBtn);
 
-//     expect(nextBtn).not.toBeInTheDocument();
-//     expect(progressEl).not.toBeInTheDocument();
-//     expect(listItems[0]).not.toBeInTheDocument();
+    expect(nextBtn).not.toBeInTheDocument();
+    expect(progressEl).not.toBeInTheDocument();
+    expect(listItems[0]).not.toBeInTheDocument();
 
-//     const resultEl = screen.queryByTestId('result') as HTMLElement;
-//     expect(resultEl).toBeInTheDocument();
-//     expect(resultEl).toBeVisible();
-//     expect(within(resultEl).getByText('1 of 5 right answers!')).toBeInTheDocument();
+    const resultEl = screen.queryByTestId('result') as HTMLElement;
+    expect(resultEl).toBeInTheDocument();
+    expect(resultEl).toBeVisible();
+    expect(within(resultEl).getByText('1 of 5 right answers!')).toBeInTheDocument();
 
-// })
+})
 
-// test("should render a 'new game' when clicking on 'Play again button' and hides 'Result'", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should render a 'new game' when clicking on 'Play again button' and hides 'Result'", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
-//     let nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
-//     let progressEl: HTMLProgressElement = screen.queryByRole('progressbar') as HTMLProgressElement;
+    let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    let nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
+    let progressEl: HTMLProgressElement = screen.queryByRole('progressbar') as HTMLProgressElement;
 
-//     Array.from({ length: gameQuiz.length }).forEach(() => {
-//         listItems = screen.queryAllByTestId('alternative-item');
-//         altBtn = within(listItems[0]).getByRole('button');
-//         fireEvent.click(altBtn);
-//         fireEvent.click(nextBtn);
-//     })
+    Array.from({ length: gameQuiz.length }).forEach(() => {
+        listItems = screen.queryAllByTestId('alternative-item');
+        altBtn = within(listItems[0]).getByRole('button');
+        fireEvent.click(altBtn);
+        fireEvent.click(nextBtn);
+    })
 
-//     expect(nextBtn.textContent).toBe('See result');
-//     fireEvent.click(nextBtn);
-//     expect(nextBtn).not.toBeInTheDocument();
-//     expect(progressEl).not.toBeInTheDocument();
-//     expect(listItems[0]).not.toBeInTheDocument();
+    expect(nextBtn.textContent).toBe('See result');
+    fireEvent.click(nextBtn);
+    expect(nextBtn).not.toBeInTheDocument();
+    expect(progressEl).not.toBeInTheDocument();
+    expect(listItems[0]).not.toBeInTheDocument();
 
-//     const resultEl = screen.queryByTestId('result') as HTMLElement;
-//     expect(resultEl).toBeInTheDocument();
-//     expect(resultEl).toBeVisible();
+    const resultEl = screen.queryByTestId('result') as HTMLElement;
+    expect(resultEl).toBeInTheDocument();
+    expect(resultEl).toBeVisible();
 
-//     const playAgainBtn = screen.getByRole('button', { name: 'Play again' })
-//     fireEvent.click(playAgainBtn);
+    const playAgainBtn = screen.getByRole('button', { name: 'Play again' })
+    fireEvent.click(playAgainBtn);
 
-//     listItems = screen.queryAllByTestId('alternative-item');
-//     nextBtn = screen.getByRole('button', { name: 'Next' })
-//     progressEl = screen.queryByRole('progressbar') as HTMLProgressElement;
-//     let questionEl: HTMLElement = screen.getByRole('heading', { level: 3, name: gameQuiz[0].question });
+    listItems = screen.queryAllByTestId('alternative-item');
+    nextBtn = screen.getByRole('button', { name: 'Next' })
+    progressEl = screen.queryByRole('progressbar') as HTMLProgressElement;
+    let questionEl: HTMLElement = screen.getByRole('heading', { level: 3, name: gameQuiz[0].question });
 
-//     expect(nextBtn).toBeInTheDocument();
-//     expect(progressEl).toBeInTheDocument();
-//     expect(listItems[0]).toBeInTheDocument();
-//     expect(questionEl.textContent).toBe(gameQuiz[0].question);
+    expect(nextBtn).toBeInTheDocument();
+    expect(progressEl).toBeInTheDocument();
+    expect(listItems[0]).toBeInTheDocument();
+    expect(questionEl.textContent).toBe(gameQuiz[0].question);
 
-// })
+})
 
-// test("should render 'NextBtn' component with text 'Next' if not on last step", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should render 'NextBtn' component with text 'Next' if not on last step", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     let nxtBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
-//     let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    let nxtBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
+    let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
 
-//     Array.from({ length: gameQuiz.length }).forEach((_, i) => {
-//         listItems = screen.queryAllByTestId('alternative-item');
-//         altBtn = within(listItems[0]).getByRole('button');
+    Array.from({ length: gameQuiz.length }).forEach((_, i) => {
+        listItems = screen.queryAllByTestId('alternative-item');
+        altBtn = within(listItems[0]).getByRole('button');
 
 
-//         if (gameQuiz.length - 1 === i) {
-//             let nxtBtn: HTMLButtonElement = screen.getByRole('button', { name: 'See result' })
-//             expect(nxtBtn.textContent).toBe('See result')
+        if (gameQuiz.length - 1 === i) {
+            let nxtBtn: HTMLButtonElement = screen.getByRole('button', { name: 'See result' })
+            expect(nxtBtn.textContent).toBe('See result')
 
-//         } else {
-//             let nxtBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
-//             expect(nxtBtn.textContent).toBe('Next')
+        } else {
+            let nxtBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
+            expect(nxtBtn.textContent).toBe('Next')
 
-//         }
+        }
 
-//         fireEvent.click(altBtn);
-//         fireEvent.click(nxtBtn);
+        fireEvent.click(altBtn);
+        fireEvent.click(nxtBtn);
 
-//     })
+    })
 
-// })
+})
 
-// test("should render updated progress-bar each step", () => {
-//     render(<GameBoard player={'test user'} />)
+test("should render updated progress-bar each step", () => {
+    render(<GameBoard player={'test user'} />)
 
-//     let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
-//     let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
-//     const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
-//     const progressEl: HTMLProgressElement = screen.queryByRole('progressbar') as HTMLProgressElement;
+    let listItems: HTMLElement[] = screen.queryAllByTestId('alternative-item');
+    let altBtn: HTMLButtonElement = within(listItems[0]).getByRole('button');
+    const nextBtn: HTMLButtonElement = screen.getByRole('button', { name: 'Next' })
+    const progressEl: HTMLProgressElement = screen.queryByRole('progressbar') as HTMLProgressElement;
 
-//     Array.from({ length: gameQuiz.length - 1 }).forEach((_, i) => {
-//         listItems = screen.queryAllByTestId('alternative-item');
-//         altBtn = within(listItems[0]).getByRole('button');
-//         expect(progressEl.value).toBe(i);
-//         fireEvent.click(altBtn);
-//         fireEvent.click(nextBtn);
-//     })
+    Array.from({ length: gameQuiz.length - 1 }).forEach((_, i) => {
+        listItems = screen.queryAllByTestId('alternative-item');
+        altBtn = within(listItems[0]).getByRole('button');
+        expect(progressEl.value).toBe(i);
+        fireEvent.click(altBtn);
+        fireEvent.click(nextBtn);
+    })
 
-//     expect(progressEl.value).toBe(gameQuiz.length-1);
-// })
+    expect(progressEl.value).toBe(gameQuiz.length-1);
+})
 

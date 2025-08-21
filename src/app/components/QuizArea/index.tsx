@@ -6,18 +6,21 @@ type QuizAreaProps = {
     gameQuiz : IQuizSet[],
     step:number,
     answer:boolean,
-    onClick : ()=>void
+    onClick : (index:number)=>void
 }
 
 const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
-
-     const handleAnsClass = (index: number) => {
+   
+     
+    const handleAnsClass = (index: number) => {
         if(answer){
-             return index === gameQuiz[step].answer ? "correct" : "wrong";
+            return index === gameQuiz[step].answer ? "correct" :  "wrong"     
         }else {
             return 'idle'
-        }
+        }     
     }
+
+   
 
     return (
         <div>
@@ -25,7 +28,7 @@ const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
             <div>
                 {gameQuiz[step].alternatives.map((item,index)=>
                 <li key={index}  data-testid="alternative-item" className={`${handleAnsClass(index)}`} >
-                    <button disabled={answer} onClick={onClick}
+                    <button disabled={answer} onClick={()=>onClick(index)}
                         className={` disabled:cursor-not-allowed cursor-pointer  `}>{item}</button></li>)}
             </div>
            

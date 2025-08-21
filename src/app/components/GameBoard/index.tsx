@@ -5,11 +5,12 @@ import ProgressBar from "../ProgressBar"
 import QuizArea from "../QuizArea"
 import { gameQuiz } from "@/data/data"
 import { useState } from "react"
+import Result from "../Result"
 
 const GameBoard = ({player}:{player:string}) => {
     const[answered,setAnswered] = useState<boolean>(false)
     const[step,setStep]=useState<number>(0)
-    
+     const[correctAnswers,setCorrectAnswers]=useState<number>(0) //for correct answers
 
     const handleStep = () => { //fn for next btn
         setStep(step+1);
@@ -18,12 +19,21 @@ const GameBoard = ({player}:{player:string}) => {
         console.log(step)     
     }
     
-    const handleAnswer = () => { //fn for disabling btn after selecting one answer
+    const handleAnswer = (index:number) => { //fn for disabling btn after selecting one answer
         setAnswered(true) 
-          
+        if(index === gameQuiz[step].answer){
+            setCorrectAnswers(correctAnswers+1)
+        }
+    }
+
+    const handleNewGame = () => {
+        setStep(0);
+        setAnswered(false)
+        setCorrectAnswers(0)
     }
 
     console.log(answered)
+    console.log(correctAnswers)
     return (
         <main>
         <header>
@@ -35,9 +45,14 @@ const GameBoard = ({player}:{player:string}) => {
          <ProgressBar gameQuiz={gameQuiz} step={step}/>
         <QuizArea gameQuiz={gameQuiz} step={step} answer={answered} onClick={handleAnswer} />
         <NextBtn gameQuiz={gameQuiz} step={step} answer={answered} onClick={handleStep} />
+        
             </>
         }
-        {step === gameQuiz.length && <button>Play Again</button>}
+        {step === gameQuiz.length && 
+        <>
+        <Result  rightAnswers={correctAnswers} amountOfAnswers={gameQuiz.length} onClick={handleNewGame}/>
+        
+        </>}
         </main>
     )
 }
