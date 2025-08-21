@@ -10,15 +10,13 @@ type QuizAreaProps = {
 }
 
 const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
-    // const[btnDisabled,setBtnDisabled] = useState<boolean>(false)
-    const[answerClass,setanswerClass] = useState<string>('idle')
-    const handleClick = (index:number) => {  
-        onClick();    
-         return index === gameQuiz[step].answer ? setanswerClass("correct") : setanswerClass("wrong");
-    }
 
-    const handleAnsClass = (index: number) => {
-        return index === gameQuiz[step].answer ? "correct" : "wrong";
+     const handleAnsClass = (index: number) => {
+        if(answer){
+             return index === gameQuiz[step].answer ? "correct" : "wrong";
+        }else {
+            return 'idle'
+        }
     }
 
     return (
@@ -26,9 +24,9 @@ const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
             <h3>{gameQuiz[step].question}</h3>
             <div>
                 {gameQuiz[step].alternatives.map((item,index)=>
-                <li key={index}  data-testid="alternative-item"  className={`${answerClass}`}>
-                    <button disabled={answer} onClick={()=>handleClick(index)}
-                        className="disabled:bg-amber-50 bg-amber-200">{item}</button></li>)}
+                <li key={index}  data-testid="alternative-item" className={`${handleAnsClass(index)}`} >
+                    <button disabled={answer} onClick={onClick}
+                        className={` disabled:cursor-not-allowed cursor-pointer  `}>{item}</button></li>)}
             </div>
            
         </div>
@@ -36,3 +34,4 @@ const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
 }
 
 export default QuizArea
+

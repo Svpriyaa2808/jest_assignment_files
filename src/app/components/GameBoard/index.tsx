@@ -11,14 +11,16 @@ const GameBoard = ({player}:{player:string}) => {
     const[step,setStep]=useState<number>(0)
     
 
-    const handleStep = () => {
+    const handleStep = () => { //fn for next btn
         setStep(step+1);
         setAnswered(false)
+        
         console.log(step)     
     }
     
-    const handleAnswer = () => {
-        setAnswered(true)
+    const handleAnswer = () => { //fn for disabling btn after selecting one answer
+        setAnswered(true) 
+          
     }
 
     console.log(answered)
