@@ -1,4 +1,3 @@
-import { gameQuiz } from "@/data/data"
 import { IQuizSet } from "@/interfaces/interfaces"
 
 type ProgressBarProps = {
@@ -12,7 +11,6 @@ const ProgressBar = ({gameQuiz,step}:ProgressBarProps) => {
             <progress className="m-2" value={step} max={gameQuiz.length}> </progress>
             <p className="m-1">{`${step} / ${gameQuiz.length}`}</p>
         </div>
-
     )
 }
 

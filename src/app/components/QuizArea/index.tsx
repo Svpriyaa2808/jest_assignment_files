@@ -1,5 +1,4 @@
 'use client'
-import { useState } from "react"
 import { IQuizSet } from "@/interfaces/interfaces"
 
 type QuizAreaProps = {
@@ -19,6 +18,7 @@ const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
             return 'idle'
         }     
     }
+
     return (
         <div>
             <h3  className="m-2">{gameQuiz[step].question}</h3>
@@ -27,8 +27,7 @@ const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
                 <li key={index}  data-testid="alternative-item" className={`${handleAnsClass(index)} border-2 border-white m-2 text-center list-none`} >
                     <button disabled={answer} onClick={()=>onClick(index)}
                         className={` disabled:cursor-none cursor-pointer m-2 p-2`}>{item}</button></li>)}
-            </div>
-           
+            </div>    
         </div>
     )
 }

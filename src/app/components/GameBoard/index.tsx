@@ -14,9 +14,7 @@ const GameBoard = ({player}:{player:string}) => {
 
     const handleStep = () => { //fn for next btn
         setStep(step+1);
-        setAnswered(false)
-        
-        console.log(step)     
+        setAnswered(false)   
     }
     
     const handleAnswer = (index:number) => { //fn for disabling btn after selecting one answer
@@ -32,27 +30,24 @@ const GameBoard = ({player}:{player:string}) => {
         setCorrectAnswers(0)
     }
 
-    console.log(answered)
-    console.log(correctAnswers)
     return (
         <main>
-        <header>
-        <GameHeader player={player}/>
-       
-        </header>
-        {step < gameQuiz.length && 
-        <>
-         <ProgressBar gameQuiz={gameQuiz} step={step}/>
-        <QuizArea gameQuiz={gameQuiz} step={step} answer={answered} onClick={handleAnswer} />
-        <NextBtn gameQuiz={gameQuiz} step={step} answer={answered} onClick={handleStep} />
-        
+            <header>
+                <GameHeader player={player}/>
+            </header>
+            
+            {step < gameQuiz.length && 
+            <>
+                <ProgressBar gameQuiz={gameQuiz} step={step}/>
+                <QuizArea gameQuiz={gameQuiz} step={step} answer={answered} onClick={handleAnswer} />
+                <NextBtn gameQuiz={gameQuiz} step={step} answer={answered} onClick={handleStep} />
             </>
-        }
-        {step === gameQuiz.length && 
-        <>
-        <Result  rightAnswers={correctAnswers} amountOfAnswers={gameQuiz.length} onClick={handleNewGame}/>
-        
-        </>}
+            }
+
+            {step === gameQuiz.length && 
+            <>
+                <Result  rightAnswers={correctAnswers} amountOfAnswers={gameQuiz.length} onClick={handleNewGame}/>
+            </>}
         </main>
     )
 }
