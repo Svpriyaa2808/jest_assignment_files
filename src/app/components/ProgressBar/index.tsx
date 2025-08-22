@@ -8,11 +8,9 @@ type ProgressBarProps = {
 
 const ProgressBar = ({gameQuiz,step}:ProgressBarProps) => {
     return (
-        <div className="flex">
-            <progress className="bg-red-300" value={step} max={gameQuiz.length}>
-            
-            </progress>
-            <p>{`${step} / ${gameQuiz.length}`}</p>
+        <div className="flex justify-center">
+            <progress className="m-2" value={step} max={gameQuiz.length}> </progress>
+            <p className="m-1">{`${step} / ${gameQuiz.length}`}</p>
         </div>
 
     )

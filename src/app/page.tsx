@@ -17,7 +17,8 @@ export default function Home() {
   }
   
   return (
-    <>
+    <div className="grow m-4 flex flex-col justify-center items-center text-white ">
+      <div className="bg-[#CA1551] w-[400px] min-h-[400px] shadow-[4px_4px_4px_4px_rgba(0,0,0,0.25)]">
     {!gameStart && 
     <CreatePlayer setPlayer={handleGame}/>}
     {gameStart && 
@@ -25,6 +26,7 @@ export default function Home() {
     <GameBoard player={playerName} />
     </>
 }
-    </>
+</div>
+    </div>
   );
 }

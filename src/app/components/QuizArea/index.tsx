@@ -19,17 +19,14 @@ const QuizArea = ({gameQuiz,step,answer,onClick}:QuizAreaProps) => {
             return 'idle'
         }     
     }
-
-   
-
     return (
         <div>
-            <h3>{gameQuiz[step].question}</h3>
-            <div>
+            <h3  className="m-2">{gameQuiz[step].question}</h3>
+            <div className="border-y-2 border-white">
                 {gameQuiz[step].alternatives.map((item,index)=>
-                <li key={index}  data-testid="alternative-item" className={`${handleAnsClass(index)}`} >
+                <li key={index}  data-testid="alternative-item" className={`${handleAnsClass(index)} border-2 border-white m-2 text-center list-none`} >
                     <button disabled={answer} onClick={()=>onClick(index)}
-                        className={` disabled:cursor-not-allowed cursor-pointer  `}>{item}</button></li>)}
+                        className={` disabled:cursor-none cursor-pointer m-2 p-2`}>{item}</button></li>)}
             </div>
            
         </div>
